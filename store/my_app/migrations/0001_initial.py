@@ -12,11 +12,10 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name='Car',
             fields=[
-                ('product_id', models.UUIDField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=200)),
-                ('created_at', models.DateTimeField()),
+                ('id', models.UUIDField(primary_key=True, serialize=False)),
+                ('title', models.CharField(max_length=200)),
             ],
         ),
     ]

@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from my_app.models import Product
+from my_app.models import Car
 
 
-class ProductSerializer(serializers.HyperlinkedModelSerializer):
+class CarSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Product
-        fields = ['product_id', 'name', 'price']
+        model = Car
+        fields = ['id', 'title', 'price']
