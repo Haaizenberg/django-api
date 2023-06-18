@@ -124,3 +124,8 @@ django.db.utils.OperationalError: no such table: my_app_car
 2023-06-18 10:38:03,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
 2023-06-18 10:38:18,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
 2023-06-18 10:38:33,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28808
+2023-06-18 10:38:48,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
+2023-06-18 10:39:03,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28808
+2023-06-18 10:39:18,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28805
+2023-06-18 10:39:33,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
+2023-06-18 10:39:48,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28806
