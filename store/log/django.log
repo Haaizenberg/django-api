@@ -1,0 +1,126 @@
+2023-06-18 10:25:01,382 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 31176
+2023-06-18 10:25:16,382 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 31179
+2023-06-18 10:25:31,381 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 31199
+2023-06-18 10:25:46,380 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 31198
+2023-06-18 10:26:01,381 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 31197
+2023-06-18 10:26:09,132 - INFO - autoreload - autoreload.py - /my_app/my_app/migrations/0001_initial.py changed, reloading.
+2023-06-18 10:26:09,466 - INFO - autoreload - autoreload.py - Watching for file changes with StatReloader
+2023-06-18 10:26:16,384 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 19396
+2023-06-18 10:26:31,380 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 23022
+2023-06-18 10:26:46,380 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 23024
+2023-06-18 10:27:01,380 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 23023
+2023-06-18 10:27:16,381 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 23021
+2023-06-18 10:27:33,510 - INFO - autoreload - autoreload.py - Watching for file changes with StatReloader
+2023-06-18 10:27:48,902 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 19394
+2023-06-18 10:28:03,899 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 23024
+2023-06-18 10:28:06,236 - INFO - basehttp - basehttp.py - "GET / HTTP/1.1" 200 4337
+2023-06-18 10:28:09,158 - ERROR - log - log.py - Internal Server Error: /car/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django_prometheus/db/common.py", line 69, in execute
+    return super().execute(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: my_app_car
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 768, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 686, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.9/site-packages/django_prometheus/db/common.py", line 69, in execute
+    return super().execute(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: my_app_car
+2023-06-18 10:28:09,166 - ERROR - basehttp - basehttp.py - "GET /car/ HTTP/1.1" 500 18825
+2023-06-18 10:28:18,899 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30405
+2023-06-18 10:28:33,899 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30403
+2023-06-18 10:28:48,899 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30404
+2023-06-18 10:29:03,899 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30405
+2023-06-18 10:29:18,898 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30406
+2023-06-18 10:29:33,898 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30440
+2023-06-18 10:29:48,898 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30475
+2023-06-18 10:30:03,897 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30478
+2023-06-18 10:30:18,896 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30496
+2023-06-18 10:30:33,897 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30497
+2023-06-18 10:30:48,896 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30498
+2023-06-18 10:31:03,896 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30497
+2023-06-18 10:31:18,897 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30497
+2023-06-18 10:31:33,896 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30497
+2023-06-18 10:31:48,896 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30497
+2023-06-18 10:32:03,896 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30511
+2023-06-18 10:32:18,895 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30511
+2023-06-18 10:32:33,895 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 30511
+2023-06-18 10:32:44,350 - INFO - autoreload - autoreload.py - /my_app/my_app/models.py changed, reloading.
+2023-06-18 10:32:44,660 - INFO - autoreload - autoreload.py - Watching for file changes with StatReloader
+2023-06-18 10:32:48,898 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 19397
+2023-06-18 10:33:03,895 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 23025
+2023-06-18 10:33:18,894 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 23025
+2023-06-18 10:33:31,364 - INFO - basehttp - basehttp.py - "GET /car/ HTTP/1.1" 200 2
+2023-06-18 10:33:33,894 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 25879
+2023-06-18 10:33:48,894 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 25879
+2023-06-18 10:34:03,272 - INFO - basehttp - basehttp.py - "POST /car/ HTTP/1.1" 201 35
+2023-06-18 10:34:03,894 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28716
+2023-06-18 10:34:12,896 - INFO - basehttp - basehttp.py - "GET /car/ HTTP/1.1" 200 37
+2023-06-18 10:34:18,893 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28742
+2023-06-18 10:34:33,893 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28802
+2023-06-18 10:34:48,893 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28802
+2023-06-18 10:35:03,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28788
+2023-06-18 10:35:18,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28808
+2023-06-18 10:35:33,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
+2023-06-18 10:35:48,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28823
+2023-06-18 10:36:03,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28808
+2023-06-18 10:36:18,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
+2023-06-18 10:36:33,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28809
+2023-06-18 10:36:48,892 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28806
+2023-06-18 10:37:03,893 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
+2023-06-18 10:37:18,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28808
+2023-06-18 10:37:33,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28809
+2023-06-18 10:37:48,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28808
+2023-06-18 10:38:03,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
+2023-06-18 10:38:18,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28807
+2023-06-18 10:38:33,891 - INFO - basehttp - basehttp.py - "GET /metrics HTTP/1.1" 200 28808

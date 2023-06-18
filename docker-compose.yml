@@ -9,6 +9,8 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile
+    volumes:
+      - ./store:/my_app
     ports:
       - 8000:8000
     command: python manage.py runserver 0.0.0.0:8000
@@ -45,7 +47,7 @@ services:
   promtail:
     image: grafana/promtail:2.8.0
     volumes:
-      - ./store/loggy:/var/log
+      - ./store/log:/var/log
       - ./promtail:/etc/promtail
     command: -config.file=/etc/promtail/promtail-config.yaml
     networks:
