@@ -177,7 +177,7 @@ LOGGING = {
         'django': {
             'handlers': ['file', 'loki'],
             'level': 'INFO',
-            'propagate': True,
+            'propagate': False,
         },
     },
 }

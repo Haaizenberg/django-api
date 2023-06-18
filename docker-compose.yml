@@ -1,5 +1,8 @@
 version: '3.7'
 
+networks:
+  loki:
+
 services:
   app:
     container_name: myapp
@@ -9,8 +12,8 @@ services:
     ports:
       - 8000:8000
     command: python manage.py runserver 0.0.0.0:8000
-
-     
+    networks:
+      - loki
 
   prometheus:
     image: prom/prometheus
@@ -26,6 +29,27 @@ services:
       - grafana_data:/data
     ports:
       - '3000:3000'
+    networks:
+      - loki
+
+  loki:
+    image: grafana/loki:2.8.0
+    volumes:
+      - ./loki:/etc/loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/loki-config.yaml
+    networks:
+      - loki
+
+  promtail:
+    image: grafana/promtail:2.8.0
+    volumes:
+      - ./store/loggy:/var/log
+      - ./promtail:/etc/promtail
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    networks:
+      - loki
 
 volumes:
   prometheus_data:
