@@ -23,7 +23,7 @@ services:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     ports:
-      - '8080:9090'
+      - '9090:9090'
     
   grafana:
     image: grafana/grafana:6.5.2
@@ -46,6 +46,8 @@ services:
 
   promtail:
     image: grafana/promtail:2.8.0
+    ports:
+      - "9080:9080"
     volumes:
       - ./store/log:/var/log
       - ./promtail:/etc/promtail

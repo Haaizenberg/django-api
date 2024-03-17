@@ -16,7 +16,7 @@ common:
 
 schema_config:
   configs:
-    - from: 2020-10-24
+    - from: 2023-12-16
       store: boltdb-shipper
       object_store: filesystem
       schema: v11
